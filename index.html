@@ -1,63 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motor Parts Shop</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            background-image: url('images (4).jpeg'); /* Replace with your background image URL */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent background for cards */
+        }
+
+        .card img {
+            max-height: 200px; /* Adjust this value as needed */
+            object-fit: cover;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+        }
+
+        .card-title,
+        .card-text {
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
-
 <body>
+    <div class="container mt-5">
+        <div class="row mb-4">
+            <div class="col-12 text-center">
+                <h2>John Loyd Moto Parts Shop</h2>
+                <hr />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-4 text-center d-flex">
+                <div class="card w-100">
+                    <img src="Whopper Ala Carte.png" class="card-img-top img-thumbnail">
+                    <div class="card-body">
+                        <h5 class="card-title">Whopper Ala Carte</h5>
+                        <p class="card-text">Price: ₱300.00</p>
+                        <input type="number" class="form-control" id="qty1" placeholder="Enter quantity" oninput="updateOrder()"/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 text-center d-flex">
+                <div class="card w-100">
+                    <img src="whopper jr Burger.jfif" class="card-img-top img-thumbnail">
+                    <div class="card-body">
+                        <h5 class="card-title">Whopper Jr Burger</h5>
+                        <p class="card-text">Price: ₱200.00</p>
+                        <input type="number" class="form-control" id="qty2" placeholder="Enter quantity" oninput="updateOrder()"/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 text-center d-flex">
+                <div class="card w-100">
+                    <img src="fish'n crisp burger.jfif" class="card-img-top img-thumbnail">
+                    <div class="card-body">
+                        <h5 class="card-title">Fish'n Crisp Burger</h5>
+                        <p class="card-text">Price: ₱250.00</p>
+                        <input type="number" class="form-control" id="qty3" placeholder="Enter quantity" oninput="updateOrder()"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-4 text-center d-flex">
+                <div class="card w-100">
+                    <img src="bigking fish burger.jfif" class="card-img-top img-thumbnail">
+                    <div class="card-body">
+                        <h5 class="card-title">Big King Fish Burger</h5>
+                        <p class="card-text">Price: ₱270.00</p>
+                        <input type="number" class="form-control" id="qty4" placeholder="Enter quantity" oninput="updateOrder()"/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 text-center d-flex">
+                <div class="card w-100">
+                    <img src="chiken burger monster.jfif" class="card-img-top img-thumbnail">
+                    <div class="card-body">
+                        <h5 class="card-title">Chicken Burger Monster</h5>
+                        <p class="card-text">Price: ₱290.00</p>
+                        <input type="number" class="form-control" id="qty5" placeholder="Enter quantity" oninput="updateOrder()"/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 text-center d-flex">
+                <div class="card w-100">
+                    <img src="grilled chiken burger.jfif" class="card-img-top img-thumbnail">
+                    <div class="card-body">
+                        <h5 class="card-title">Grilled Chicken Burger</h5>
+                        <p class="card-text">Price: ₱270.00</p>
+                        <input type="number" class="form-control" id="qty6" placeholder="Enter quantity" oninput="updateOrder()"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="card">
+                    <div class="card-body">
+                        <label for="carts">Orders</label>
+                        <textarea class="form-control mb-3" rows="10" id="carts" readonly style="font-size: 12px;"></textarea>
+                        <input type="text" class="form-control border-0 mb-3" id="total" readonly placeholder="Total"/>
+                        <input type="number" class="form-control mb-3" id="cash" placeholder="Cash Tendered" oninput="calculateChange()"/>
+                        <input type="text" class="form-control border-0 mb-3" id="change" readonly placeholder="Change"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<div class="container">
-
-<div class="row">
-
-<div class="col-12 text-center">
-
-<h2>AT Cellphone Store</h2>
-
-<hr class="hr" />
-
-</div>
-
-</div>
-
-<div class="row">
-
-<div class="col-4 text-center">
-
-<label id="product1"> Samsung S21 </label>
-
-<img src="images/s21.png" style="width: 400px; height:500px;" class="img-thumbnail"/><br>
-
-<label for="producti" id="pricel">27000.00</label>
-
-<input type="number" class="form-control" id="qty1" placeholder "Enter quantity"/><br>
-
-</div>
-
-<div class="col-4 text-center">
-
-<label id="product2"> Samsung $22</label>
-
-<img src="images/s22.png" style="width: 400px;height:500px;" class="img-thumbnail"/><br>
-
-<label for="product2" id="price2">37000.00</label>
-
-<input type="number" class="form-control" id="qty2" placeholder="Enter quantity"/><br>
-
-</div>
-
-<div class="col-4">
-
-<label for="carts"> Orders </label<br>
-
-<textarea class="form-control" "29" id="carts" cols="200" readonly style="width: 350px;height: 400;font-size: 12px;"> </textarea>
-
-<input type="text" class="form-control border-0" id="total" readonly placeholder "Total"/>
-
-<input type="number" class="form-control" id="cash" placeholder "Cash Tendered"/>
-
-<input type="text" class="form-control border-0" id="change" readonly placeholder="Change"/> </div>
-
-</div>
-
-</div>
-
-<script src="app.js"></script>
-
+    <script src="app.js"></script>
 </body>
+    </html>
